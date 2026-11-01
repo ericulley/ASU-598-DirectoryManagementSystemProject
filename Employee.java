@@ -1,7 +1,7 @@
-public class Employee extends Person{
+public class Employee extends Person {
+	
 	private int empID;
 	private double baseSalary;
-
 
 	public Employee(String last, String first, String middle, int id, double sal) {
 		super(last, first, middle);
@@ -10,10 +10,7 @@ public class Employee extends Person{
 
 	}
 
-	public int getID()
-	{
+	public int getID() {
 		return empID;
-
 	}
-
 }
