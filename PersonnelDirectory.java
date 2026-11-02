@@ -35,7 +35,7 @@ public class PersonnelDirectory {
 					salary = scan.nextDouble();
 					scan.nextLine();
 
-					Employee e1 = new Employee(lastN, firstN, middleN, empID, salary);
+					Employee e1 = PersonnelFactory.createPersonnel(Employee.class, lastN, firstN, middleN, empID, salary);
 					personnel.addPersonnel(e1);
 					break;
 				
@@ -64,7 +64,7 @@ public class PersonnelDirectory {
 						foundPerson.printFirstMiddleLastNames();
 					} else {
 						System.out.println("Not found");
-						Person p1  = new Person(lastN, firstN, " ");
+						Person p1  = PersonnelFactory.createPersonnel(Person.class, lastN, firstN, " ");
 						personnel.addPersonnel(p1);
 					}
 					break;
