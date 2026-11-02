@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class PersonnelDirectory {
 	public static void main(String[] args) {
 		
-		Personnel per = new Personnel();
+		Personnel personnel = new Personnel();
 		totalObjects total = new totalObjects();
 		Scanner scan = new Scanner(System.in);
 		String firstN, lastN, middleN;
@@ -36,9 +36,9 @@ public class PersonnelDirectory {
 					salary = scan.nextDouble();
 					scan.nextLine();
 
-					Employee e1  = new Employee(lastN, firstN, middleN, empID, salary);
+					Employee e1 = new Employee(lastN, firstN, middleN, empID, salary);
 
-					per.addPersonnel(e1);
+					personnel.addPersonnel(e1);
 					total.objectAdded();
 					break;
 				
@@ -50,8 +50,8 @@ public class PersonnelDirectory {
 					boolean found = false;
 					int loc = -1;
 					
-					for (int i =0; i <per.personList.size(); i++) {
-						if (per.personList.get(i).first.equals(firstN) && per.personList.get(i).last.equals(lastN)) {
+					for (int i = 0; i < personnel.personList.size(); i++) {
+						if (personnel.personList.get(i).first.equals(firstN) && personnel.personList.get(i).last.equals(lastN)) {
 							found = true;
 							loc = i;
 						}
@@ -59,24 +59,22 @@ public class PersonnelDirectory {
 					
 					if (found) {
 						System.out.println("Found");
-						per.personList.get(loc).printName(0);
+						personnel.personList.get(loc).printName(0);
 
 					} else {
 						System.out.println("not found");
 						Person p1  = new Person(lastN, firstN, " ");
-						per.personList.add(p1);
+						personnel.personList.add(p1);
 						total.objectAdded();
 					}
-
 					break;
 				
 				case 3:
 					System.out.println("Enter the order 0: first, middle,  last, 1: first, last, middle, 2: last, first , middle ");
 					int order = scan.nextInt();
-					for (int i=0; i<per.personList.size(); i++) {
-						per.personList.get(i).printName(order);
+					for (int i = 0; i < personnel.personList.size(); i++) {
+						personnel.personList.get(i).printName(order);
 					}
-
 					break;
 
 				case 4:

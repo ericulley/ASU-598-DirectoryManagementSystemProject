@@ -7,7 +7,6 @@ public class Employee extends Person {
 		super(last, first, middle);
 		empID = id;
 		baseSalary = sal;
-
 	}
 
 	public int getID() {
