@@ -1,13 +1,21 @@
 public class Person {
 	
-	public String last;
-	public String first;
-	public String middle;
+	private String last;
+	private String first;
+	private String middle;
 
 	public Person(String last, String first, String middle) {
 		this.last = last;
 		this.first = first;
 		this.middle = middle;
+	}
+
+	public String getFirstName() {
+		return first;
+	}
+	
+	public String getLastName() {
+		return last;
 	}
 
 	public void printName(int order) {

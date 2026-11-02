@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Personnel {
 
-	public ArrayList<Person> personList;
+	private ArrayList<Person> personList;
 
 	public Personnel() {
 		personList = new ArrayList<Person>();
@@ -14,5 +14,15 @@ public class Personnel {
 
 	public int getSize() {
 		return personList.size();
+	}
+
+	public Person getPersonAtIndex(int index) {
+		return personList.get(index);
+	}
+
+	public void printAllNames(int order) {
+		for (int i = 0; i < personList.size(); i++) {
+			personList.get(i).printName(order);
+		}
 	}
 }

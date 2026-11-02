@@ -48,29 +48,33 @@ public class PersonnelDirectory {
 					boolean found = false;
 					int loc = -1;
 					
-					for (int i = 0; i < personnel.personList.size(); i++) {
-						if (personnel.personList.get(i).first.equals(firstN) && personnel.personList.get(i).last.equals(lastN)) {
+					for (int i = 0; i < personnel.getSize(); i++) {
+						Person person = personnel.getPersonAtIndex(i);
+						String firstName = person.getFirstName();
+						String lastName = person.getLastName();
+						if (firstName.equals(firstN) && lastName.equals(lastN)) {
 							found = true;
 							loc = i;
+							break;
 						}
 					}
 					
 					if (found) {
 						System.out.println("Found");
-						personnel.personList.get(loc).printName(0);
+						personnel.getPersonAtIndex(loc).printName(0);
 
 					} else {
 						System.out.println("Not found");
 						Person p1  = new Person(lastN, firstN, " ");
-						personnel.personList.add(p1);
+						personnel.addPersonnel(p1);
 					}
 					break;
 				
 				case 3:
 					System.out.println("Enter the order 0: first, middle, last; 1: first, last, middle; 2: last, first, middle");
 					int order = scan.nextInt();
-					for (int i = 0; i < personnel.personList.size(); i++) {
-						personnel.personList.get(i).printName(order);
+					for (int i = 0; i < personnel.getSize(); i++) {
+						personnel.getPersonAtIndex(i).printName(order);
 					}
 					break;
 
