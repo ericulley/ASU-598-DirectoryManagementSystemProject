@@ -13,18 +13,20 @@ public class Person {
 	public String getFirstName() {
 		return first;
 	}
-	
+
 	public String getLastName() {
 		return last;
 	}
 
-	public void printName(int order) {
-		if (order == 0) {
-	    	System.out.println(first + "  " + middle + "  " + last);
-		} else if (order == 1) {
-	    	System.out.println(first + " ," + last+ " " + middle);
-	    } else if(order == 2) {
-			System.out.println(last + " ," + first + " " + middle);
-	    }
+	public void printFirstMiddleLastNames() {
+		System.out.println(this.first + "  " + this.middle + "  " + this.last);
+	}
+
+	public void printFirstLastMiddleNames() {
+		System.out.println(this.first + "  " + this.last + " " + this.middle);
+	}
+
+	public void printLastFirstMiddleNames() {
+		System.out.println(this.last + " " + this.first + "  " + this.middle);
 	}
 }

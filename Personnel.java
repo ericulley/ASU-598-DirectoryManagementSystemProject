@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 public class Personnel {
 
@@ -18,11 +18,5 @@ public class Personnel {
 
 	public Person getPersonAtIndex(int index) {
 		return personList.get(index);
-	}
-
-	public void printAllNames(int order) {
-		for (int i = 0; i < personList.size(); i++) {
-			personList.get(i).printName(order);
-		}
 	}
 }

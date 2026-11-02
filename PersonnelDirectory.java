@@ -36,7 +36,6 @@ public class PersonnelDirectory {
 					scan.nextLine();
 
 					Employee e1 = new Employee(lastN, firstN, middleN, empID, salary);
-
 					personnel.addPersonnel(e1);
 					break;
 				
@@ -61,8 +60,8 @@ public class PersonnelDirectory {
 					
 					if (found) {
 						System.out.println("Found");
-						personnel.getPersonAtIndex(loc).printName(0);
-
+						Person foundPerson = personnel.getPersonAtIndex(loc);
+						foundPerson.printFirstMiddleLastNames();
 					} else {
 						System.out.println("Not found");
 						Person p1  = new Person(lastN, firstN, " ");
@@ -74,7 +73,16 @@ public class PersonnelDirectory {
 					System.out.println("Enter the order 0: first, middle, last; 1: first, last, middle; 2: last, first, middle");
 					int order = scan.nextInt();
 					for (int i = 0; i < personnel.getSize(); i++) {
-						personnel.getPersonAtIndex(i).printName(order);
+						Person person =personnel.getPersonAtIndex(i);
+						if (order == 0) {
+							person.printFirstMiddleLastNames();
+						} else if (order == 1) {
+							person.printFirstLastMiddleNames();
+						} else if (order == 2) {
+							person.printLastFirstMiddleNames();
+						} else {
+							System.out.println("Invalid order");
+						}
 					}
 					break;
 
