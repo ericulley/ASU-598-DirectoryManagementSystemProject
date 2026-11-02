@@ -11,4 +11,8 @@ public class Personnel {
 	public void addPersonnel(Person p) {
 		personList.add(p);
 	}
+
+	public int getSize() {
+		return personList.size();
+	}
 }

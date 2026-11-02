@@ -4,7 +4,6 @@ public class PersonnelDirectory {
 	public static void main(String[] args) {
 		
 		Personnel personnel = new Personnel();
-		totalObjects total = new totalObjects();
 		Scanner scan = new Scanner(System.in);
 		String firstN, lastN, middleN;
 		int empID;
@@ -30,22 +29,21 @@ public class PersonnelDirectory {
 					lastN = scan.nextLine();
 					System.out.println("Enter middle name: ");
 					middleN = scan.nextLine();
-					System.out.println("Enter empploy id : ");
+					System.out.println("Enter empploy id: ");
 					empID = scan.nextInt();
-					System.out.println("Enter base salaey" );
+					System.out.println("Enter base salaey: " );
 					salary = scan.nextDouble();
 					scan.nextLine();
 
 					Employee e1 = new Employee(lastN, firstN, middleN, empID, salary);
 
 					personnel.addPersonnel(e1);
-					total.objectAdded();
 					break;
 				
 				case 2:
-					System.out.println("Enter firts name : ");
+					System.out.println("Enter firts name: ");
 					firstN = scan.nextLine();
-					System.out.println("Enter last name : ");
+					System.out.println("Enter last name: ");
 					lastN = scan.nextLine();
 					boolean found = false;
 					int loc = -1;
@@ -62,15 +60,14 @@ public class PersonnelDirectory {
 						personnel.personList.get(loc).printName(0);
 
 					} else {
-						System.out.println("not found");
+						System.out.println("Not found");
 						Person p1  = new Person(lastN, firstN, " ");
 						personnel.personList.add(p1);
-						total.objectAdded();
 					}
 					break;
 				
 				case 3:
-					System.out.println("Enter the order 0: first, middle,  last, 1: first, last, middle, 2: last, first , middle ");
+					System.out.println("Enter the order 0: first, middle, last; 1: first, last, middle; 2: last, first, middle");
 					int order = scan.nextInt();
 					for (int i = 0; i < personnel.personList.size(); i++) {
 						personnel.personList.get(i).printName(order);
@@ -78,7 +75,7 @@ public class PersonnelDirectory {
 					break;
 
 				case 4:
-					System.out.println("Total Entries : " + total.getTotalObjects());
+					System.out.println("Total Entries: " + personnel.getSize());
 					break;
 			}
 		} while(true);
